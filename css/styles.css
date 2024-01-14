@@ -424,6 +424,10 @@ img { display: block;}
     padding-bottom: 100px;
 }
 
+.footer-content{
+    display: flex;
+    align-items: baseline;
+}
 
 .footer-logo-text {
     margin-right: 120px;
