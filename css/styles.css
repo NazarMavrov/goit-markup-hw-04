@@ -58,6 +58,7 @@ img { display: block;}
     gap: 40px;
 }
 
+
 .header-nav-link {
     color:#2E2F42;
     font-size: 16px;
@@ -66,11 +67,28 @@ img { display: block;}
     letter-spacing: 0.02em;
     padding: 24px 0;
     display: block;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-nav-link:hover,
 .header-nav-link:focus{
     color: #404BBF;
+}
+
+.current {
+    position: relative;
+    color: #404BBF;
+}
+
+.current::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    border-radius: 2px;
+    background-color: #404BBF;
+    height: 4px;
+    width: 100%;
 }
 
 .header-address-list {
@@ -87,6 +105,7 @@ img { display: block;}
         font-size: 16px;
         line-height: 1.5;
         letter-spacing: 0.02em;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-address-link:hover,
 .header-address-link:focus {
@@ -97,6 +116,12 @@ img { display: block;}
 /* -----hero-section----- */
 .hero {
     background: #2E2F42;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), url(/images/people-office-min.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    max-width: 1440px;
+    margin: 0 auto;
     padding: 188px 0;
 }
 
@@ -132,6 +157,7 @@ img { display: block;}
     padding: 16px 32px;
     display: block;
     min-width: 169px;
+    transition: transform 250ms linear;
 }
 
 .hero-btn:hover,
@@ -143,6 +169,21 @@ img { display: block;}
 /* -----feautures-section----- */
 .feautures {
     padding: 120px 0;
+}
+.feautures-icons {
+    display: flex;
+    gap: 24px;
+}
+
+.feautures-icons-list{
+    border-radius: 4px;
+    border: 1px solid  #8E8F99;
+    background-color:  #F4F4FD;
+    width: 264px;
+    height: 112px;
+    flex-shrink: 0;
+    margin-bottom: 8px;
+    padding: 24px 100px;
 }
 
 .visualy-hidden {
@@ -233,7 +274,6 @@ img { display: block;}
     line-height: 1.20;
     letter-spacing: 0.02em;
     margin-bottom: 8px;
-    text-align: center;
     margin-bottom: 8px;
 }
 
@@ -242,7 +282,25 @@ img { display: block;}
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    text-align: center;
+}
+
+.team-list-icon {
+    display: flex;
+    gap: 24px;
+    margin: 0 16px;
+}
+.team-icon{
+    width: 40px;
+    height: 40px;
+    background-color: #4D5AE5;
+    flex-shrink: 0;
+    border-radius: 50px;
+    padding: 12px;
+    transition: transform 250ms linear;
+}
+
+.team-icon:hover {
+    background-color: #31D0AA
 }
 /* -----our-team-section----- */
 
@@ -277,12 +335,10 @@ img { display: block;}
 .portfolio-list-item {
     width: calc(100% - (24 * 2) /3);
     padding-bottom: 32px;
-    margin-bottom: 8px
+    margin-bottom: 8px;
 } 
 
-.portfolio-list-item-img {
-    margin-bottom: 32px;
-}
+
 
 .portfolio-list-item-name {
     color: #2E2F42;
@@ -292,6 +348,7 @@ img { display: block;}
     letter-spacing: 0.02em;
     padding-left: 16px;
     margin-bottom: 8px;
+    margin-top: 32px;
 }
 
 .portfolio-list-item-type {
@@ -300,10 +357,36 @@ img { display: block;}
     letter-spacing: 0.02em;
     padding-left: 16px;
 }
+
+.portfolio-img-text-wrap {
+    display: flex;
+    padding: 40px 32px 164px;
+    position: absolute;
+    top: 0;
+    background-color: #4D5AE5;
+    height: 100%;
+    transform: translateY(100%);
+    transition: transform 250ms linear;
+}
+
+.portfolio-img-cover-wrap {
+    position: relative;
+    overflow: hidden;
+}
+.portfolio-img-text {
+    color: #F4F4FD;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+}
+.portfolio-list-item:hover .portfolio-img-text-wrap {
+    transform: translateY(0%);
+}
 /* -----our-portfolio-section----- */
 
 /* -----footer----- */
 .footer {
+    display: flex;
     background:#2E2F42;
     padding-top: 100px;
     padding-bottom: 100px;
@@ -330,5 +413,13 @@ img { display: block;}
     line-height: 1.5;
     letter-spacing: 0.02em;
     max-width: 264px;
+}
+
+.footer-soc-text {
+    color:  #FFF;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02px;
 }
 /* -----footer----- */
